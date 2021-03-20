@@ -139,20 +139,16 @@ add_action( 'widgets_init', 'one_toronto_widgets_init' );
 /**
  * Enqueue scripts and styles.
  */
-function one_toronto_scripts() {
+function z_store_scripts() {
 
 	
-	// wp_enqueue_style( 'Bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css' );
-	wp_enqueue_style( 'Bootstrap Styles', get_theme_file_uri('/css/vendor/bootstrap.min.css'));
-	wp_enqueue_style( 'Vendor Styles', get_theme_file_uri('/css/vendor/vendor.min.css'));
-	wp_enqueue_style( 'Styles', get_theme_file_uri('/css/style.css'));
-	wp_enqueue_style( ' Sport Styles', get_theme_file_uri('/css/style-sport.min.css'));
-	wp_enqueue_style( 'Icons', get_theme_file_uri('/css/fonts/icomoon/icons.css'));
-	wp_enqueue_style( 'Monserat Font', get_theme_file_uri('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap'));
-	wp_enqueue_style( 'Main Style', get_theme_file_uri('/css/OneTorontoStyle.css'));
+	wp_enqueue_style( 'Bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css' );
+	wp_enqueue_style( 'Normalize Style', get_theme_file_uri('/css/normalize.css'));
+	wp_enqueue_style( 'Webflow Style', get_theme_file_uri('/css/webflow.css'));
+	wp_enqueue_style( 'Main Style', get_theme_file_uri('/css/z-store.css'));
 	
-	wp_enqueue_script('one_toronto_bootstrap_js', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', 'jquery-core-js', NULL, true);
-	wp_enqueue_script( 'one-toronto-apps', get_template_directory_uri() . '/js/app.js', array(), _S_VERSION, true );
+	wp_enqueue_script('Bootstrap js', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', 'jquery-core-js', NULL, true);
+	wp_enqueue_script( 'webflow Js', get_template_directory_uri() . '/js/webflow.js', array(), _S_VERSION, true );
 	
 
 
@@ -160,7 +156,7 @@ function one_toronto_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'one_toronto_scripts' );
+add_action( 'wp_enqueue_scripts', 'z_store_scripts' );
 
 
 

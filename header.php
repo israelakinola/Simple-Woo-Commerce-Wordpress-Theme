@@ -9,8 +9,6 @@
  * @package one-toronto
  */
 
-$custom_logo_id = get_theme_mod( 'custom_logo' );
-$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 
 ?>
 <!doctype html>
@@ -24,9 +22,12 @@ $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 </head>
 
 <?php 
+  //Get WP Appreance Logo
   $custom_logo_id = get_theme_mod( 'custom_logo' );
-  $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-   $cart_number = 0;
+  $logo_src = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+
+  //Get number of cart quantity
+  $cart_number = 0;
   foreach( WC()->cart->get_cart() as $cart_item_key => $cart_item ) { 
       if($cart_item['quantity'] > 0 ){
         $cart_number =  $cart_item['quantity'];
@@ -35,188 +36,29 @@ $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
       
     }
       ?> 
-<body onload="setPreviewToFalse()" <?php body_class(); ?>>
-<header class="hdr-wrap">
-      <div class="hdr-content hdr-content-sticky">
-        <div class="container">
-          <div class="row">
-            <div class="col-auto show-mobile">
-              <!-- Menu Toggle -->
-              <div class="menu-toggle"> <a href="#" class="mobilemenu-toggle"><i class="icon-menu"></i></a> </div>
-              <!-- /Menu Toggle -->
-            </div>
-            <div class="col-auto hdr-logo">
-              <a href="/" class="logo"><img width="50" src='<?php echo get_theme_file_uri('images/logo.png') ?>' alt="Logo"></a>
-            </div>
-            <div class="hdr-phone hide-mobile">
-              <i class="icon-phone"></i><span>+1 437 231 0617 </span>
-            </div>
-            <!--navigation-->
-            <div class="hdr-nav hide-mobile nav-holder-s">
-            </div>
-            <!--//navigation-->
-            <div class="hdr-links-wrap col-auto ml-auto">
-              <div class="hdr-inline-link">
-                <!-- Header Search -->
-                <div class="search_container_desktop">
-                  <div class="dropdn dropdn_search dropdn_fullwidth">
-                    <a href="#" class="dropdn-link  js-dropdn-link only-icon"><i class="icon-search"></i><span class="dropdn-link-txt">Search</span></a>
-                    <div class="dropdn-content">
-                      <div class="container">
-                        <form method="get" action="#" class="search search-off-popular">
-                          <input name="search" type="text" class="search-input input-empty" placeholder="What are you looking for?">
-                          <button type="submit" class="search-button"><i class="icon-search"></i></button>
-                          <a href="#" class="search-close js-dropdn-close"><i class="icon-close-thin"></i></a>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- /Header Search -->
-            
-             
-              </div>
-            </div>
-          </div>
-        </div>
+<body <?php body_class(); ?>>
+    <header>
+    <div data-collapse="medium" data-animation="default" data-duration="400" role="banner" class="navigation w-nav">
+    <div class="navigation-items">
+      <div class="navigation-wrap">
+        <nav role="navigation" class="navigation-items w-nav-menu">
+          <a href="/" class="navigation-item w-nav-link <?php if (is_page('home')) echo 'active' ?>">HOME</a>
+          <a href="/" class="navigation-item w-nav-link <?php if (is_page('blog') OR get_post_type() == 'post') echo 'active' ?>">BLOG</a>
+          <a href="/about" class="navigation-item w-nav-link <?php if (is_page('about')) echo 'active' ?>">ABOUT</a>
+          <a href="/contact" class="navigation-item w-nav-link <?php if (is_page('contact')) echo 'active' ?>">Contact</a>
+        </nav>
+        <div class="menu-button w-nav-button"><img src="images/menu-icon_1menu-icon.png" width="22" alt="" class="menu-icon"></div>
       </div>
-      <div class="hdr hdr-style2">
-        <div class="hdr-topline js-hdr-top">
-          <div class="container">
-            <div class="row">
-              <div class="col hdr-topline-left">
-                <!-- Header Social -->
-                <div class="hdr-line-separate">
-                  <ul class="social-list list-unstyled">
-                    <li>
-                      <a target="_blank" href="https://www.instagram.com/one.toronto/"><i class="icon-facebook"></i></a>
-                    </li>
-                    <li>
-                      <a target="_blank" href="https://www.instagram.com/one.toronto/"><i class="icon-twitter"></i></a>
-                    </li>
-                    <li>
-                      <a target="_blank" href="https://www.instagram.com/one.toronto/"><i class="icon-google"></i></a>
-                    </li>
-                    <li>
-                      <a target="_blank" href="https://www.instagram.com/one.toronto/"><i class="icon-instagram"></i></a>
-                    </li>
-                    <li>
-                      <a target="_blank" href="https://www.youtube.com/channel/UCOIHiCxrgEf0HTJadjfIMFw"><i class="icon-youtube"></i></a>
-                    </li>
-                    <li>
-                      <a target="_blank" href="https://www.youtube.com/channel/UCOIHiCxrgEf0HTJadjfIMFw"><i class="icon-linkedin"></i></a>
-                    </li>
-                  </ul>
-                </div>
-                <!-- /Header Social -->
-              </div>
-              <div class="col hdr-topline-right hide-mobile">
-                <div class="hdr-inline-link">
-                  <!-- Header Language -->
-                  <div class="dropdn_language">
-                    <div class="dropdn dropdn_language dropdn_language--noimg dropdn_caret">
-                      <a href="#" class="dropdn-link js-dropdn-link"><span class="js-dropdn-select-current">English</span><i class="icon-angle-down"></i></a>
-                      <div class="dropdn-content">
-                        <ul>
-                          <li class="active"><a href="#"><img src="images/flags/en.png" alt="">English</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- /Header Language -->
-                  <!-- Header Currency -->
-                  <div class="dropdn_currency">
-                    <div class="dropdn dropdn_caret">
-                      <a href="#" class="dropdn-link js-dropdn-link">CAD dollars<i class="icon-angle-down"></i></a>
-                      <div class="dropdn-content">
-                        <ul>
-                          <li class="active"><a href="#"><span>CAD dollars</span></a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- /Header Currency -->
-                
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="hdr-content">
-          <div class="container">
-            <div class="row">
-              <div class="col-auto show-mobile">
-                <!-- Menu Toggle -->
-                <div class="menu-toggle"> <a href="" class="mobilemenu-toggle"><i onclick="openMobileNav(event)" class="icon-menu"></i></a> </div>
-                <!-- /Menu Toggle -->
-              </div>
-              <!--navigation-->
-              <div class="col-8 hdr-nav hide-mobile nav-holder">
-                <!--mmenu-->
-                <ul class="mmenu mmenu-js">
-                  <li class="mmenu-item--simple"><a href="/" class="<?php if (is_page('home')) echo 'active' ?>">Home</a></li>
-                  <li class="mmenu-item--simple"><a class="<?php if (is_page('community')) echo 'active' ?>" href="/community">Community</a></li>
-                  <li class="mmenu-item--simple"><a class="<?php if (is_page('Lifestyle') OR get_post_type() == 'post' ) echo 'active' ?>" href="/lifestyle">LifeStyle</a></li>
-                  <li class="mmenu-item--simple"><a class="<?php if (is_page('about')) echo 'active' ?>" href="/about">About</a></li>
-                </ul>
-                <!--/mmenu-->
-              </div>
-              <!--//navigation-->
-              <div class="hdr-logo">
-                <a href="/" class="logo"><img width="50" src="<?php echo get_theme_file_uri('images/logo.png') ?>" alt="Logo"></a>
-              </div>
-              <div class="col col-lg-8 hdr-links-wrap">
-                <div class="hdr-links">
-                  <div class="hdr-phone">
-                    <i class="icon-phone"></i><span>+1 437 231 0617</span>
-                  </div>
-                  <div class="hdr-inline-link">
-                    <!-- Header Search -->
-                    <div class="search_container_desktop">
-                      <div class="dropdn dropdn_search dropdn_fullwidth">
-                        <a href="#" class="dropdn-link  js-dropdn-link only-icon"><i class="icon-search"></i><span class="dropdn-link-txt">Search</span></a>
-                        <div class="dropdn-content">
-                          <div class="container">
-                            <form method="get" action="#" class="search search-off-popular">
-                              <input name="search" type="text" class="search-input input-empty" placeholder="What are you looking for?">
-                              <button type="submit" class="search-button"><i class="icon-search"></i></button>
-                              <a href="#" class="search-close js-dropdn-close"><i class="icon-close-thin"></i></a>
-                            </form>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- /Header Search -->
-                  
-                    <div class="dropdn dropdn_fullheight minicart">
-                      <a href="/cart" class="dropdn-link minicart-link">
-                        <i class="icon-basket"></i>
-                        <span class="minicart-qty"><?php echo $cart_number ?></span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
+      <a href="/" aria-current="page" class="logo-link w-nav-brand w--current"><img src=<?php echo  $logo_src[0]; ?>" width="65" alt="" class="logo-image"></a>
+      <div class="cart-search">
+        <img src="images/search.svg" loading="lazy" width="30" alt="">
+        <a href="/cart" data-node-type="commerce-cart-wrapper" ata-node-type="commerce-cart-open-link" class="w-commerce-commercecartopenlink button cc-cart w-inline-block">
+            <div class="w-inline-block">Cart</div>
+            <div class="w-commerce-commercecartopenlinkcount cart-quantity"><?php echo $cart_number ?></div>  
+          </a>
       </div>
-  </header>
-
-  <!-- Mobile Nav Setup -->
-  <div class="mobile-nav-links-con d-lg-none hidden">
-    <div class="overlay-mobile-nav"></div>
-    <nav class="mobile-nav-con ">
-          <div class="close-toggle" onclick="closeNav()">Close</div>
-          <ul class="nav nav-level-1">
-                <li><a href="/" class="<?php if (is_page('home')) echo 'active' ?>">Home</a></li>
-                  <li><a class="<?php if (is_page('community')) echo 'active' ?>" href="/community">Community</a></li>
-                  <li><a class="<?php if (is_page('Lifestyle') OR get_post_type() == 'post' ) echo 'active' ?>" href="/lifestyle">LifeStyle</a></li>
-                  <li><a class="<?php if (is_page('about')) echo 'active' ?>" href="/about">About</a></li>
-            </ul>
-    </nav>
+    </div>
   </div>
-  <!-- / Mobile Nav Setup -->
 
+    </header>
 
