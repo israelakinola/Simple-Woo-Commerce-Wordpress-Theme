@@ -3023,7 +3023,7 @@ figcaption {
   margin-bottom: 10px;
 }
 
-.navigation-item {
+.navigation-item,.page_item {
   padding-top: 9px;
   padding-bottom: 9px;
   opacity: 0.6;
@@ -3033,8 +3033,11 @@ figcaption {
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
+  
 }
-
+.page_item a{
+  text-decoration: none;
+}
 .navigation-item:hover {
   opacity: 0.9;
 }
@@ -4085,7 +4088,7 @@ figcaption {
     text-align: center;
   }
 
-  .navigation-item {
+  .navigation-item,.page_item {
     padding: 15px 30px;
     -webkit-transition: background-color 400ms ease, opacity 400ms ease, color 400ms ease;
     transition: background-color 400ms ease, opacity 400ms ease, color 400ms ease;

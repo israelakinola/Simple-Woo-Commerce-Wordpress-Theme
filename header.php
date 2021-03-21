@@ -38,27 +38,21 @@
       ?> 
 <body <?php body_class(); ?>>
     <header>
-    <div data-collapse="medium" data-animation="default" data-duration="400" role="banner" class="navigation w-nav">
-    <div class="navigation-items">
-      <div class="navigation-wrap">
-        <nav role="navigation" class="navigation-items w-nav-menu">
-          <a href="/" class="navigation-item w-nav-link <?php if (is_page('home')) echo 'active' ?>">HOME</a>
-          <a href="/" class="navigation-item w-nav-link <?php if (is_page('blog') OR get_post_type() == 'post') echo 'active' ?>">BLOG</a>
-          <a href="/about" class="navigation-item w-nav-link <?php if (is_page('about')) echo 'active' ?>">ABOUT</a>
-          <a href="/contact" class="navigation-item w-nav-link <?php if (is_page('contact')) echo 'active' ?>">Contact</a>
-        </nav>
-        <div class="menu-button w-nav-button"><img src="images/menu-icon_1menu-icon.png" width="22" alt="" class="menu-icon"></div>
+        <div data-collapse="medium" data-animation="default" data-duration="400" role="banner" class="navigation w-nav">
+        <div class="navigation-items">
+            <?php wp_nav_menu( ['container' => 'nav','container_class'=> 'w-nav-menu-con', 'menu_class'=>'w-nav-menu-con','theme_location'=>'Header Menu','menu'=> get_nav_menu_locations('Header Menu')['header_menu']] ) ?>
+            <div class="menu-button w-nav-button"><img src="images/menu-icon_1menu-icon.png" width="22" alt="" class="menu-icon"></div>
+            <!-- Logo -->
+            <a href="/" aria-current="page" class="logo-link w-nav-brand w--current"><img src=<?php echo  $logo_src[0]; ?>" width="65" alt="" class="logo-image"></a>
+            <!-- Cart and Search btn -->
+            <div class="cart-search">
+              <img src="images/search.svg" loading="lazy" width="30" alt="">
+              <a href="/cart" data-node-type="commerce-cart-wrapper" ata-node-type="commerce-cart-open-link" class="w-commerce-commercecartopenlink button cc-cart w-inline-block">
+                  <div class="w-inline-block">Cart</div>
+                  <div class="w-commerce-commercecartopenlinkcount cart-quantity"><?php echo $cart_number ?></div>  
+                </a>
+            </div>
+          </div>
+        </div>
       </div>
-      <a href="/" aria-current="page" class="logo-link w-nav-brand w--current"><img src=<?php echo  $logo_src[0]; ?>" width="65" alt="" class="logo-image"></a>
-      <div class="cart-search">
-        <img src="images/search.svg" loading="lazy" width="30" alt="">
-        <a href="/cart" data-node-type="commerce-cart-wrapper" ata-node-type="commerce-cart-open-link" class="w-commerce-commercecartopenlink button cc-cart w-inline-block">
-            <div class="w-inline-block">Cart</div>
-            <div class="w-commerce-commercecartopenlinkcount cart-quantity"><?php echo $cart_number ?></div>  
-          </a>
-      </div>
-    </div>
-  </div>
-
     </header>
-

@@ -187,6 +187,17 @@ function mytheme_add_woocommerce_support() {
 add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
 
 
+//Register Menu Location
+if ( ! function_exists( 'mytheme_register_nav_menu' ) ) {
+ 
+    function z_store_register_nav_menu(){
+        register_nav_menus( array(
+            'header_menu' => __( 'Header Menu', 'This Menu is assigned to the Top Navigation' ),
+            'footer_menu'  => __( 'Footer Menu', 'This Menu is 	assigned to the Footer Navigation' ),
+        ) );
+    }
+    add_action( 'after_setup_theme', 'z_store_register_nav_menu', 0 );
+}
 
 
 function one_toronto_img_dim($image_url,$size ){

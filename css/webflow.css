@@ -1605,7 +1605,7 @@ textarea.w-select {
   text-decoration: none;
   color: #333333;
 }
-.w-nav-link {
+.w-nav-link,.page_item {
   position: relative;
   display: inline-block;
   vertical-align: top;
@@ -1616,9 +1616,7 @@ textarea.w-select {
   margin-left: auto;
   margin-right: auto;
 }
-.w-nav-link.w--current {
-  color: #0082f3;
-}
+
 .w-nav-menu {
   position: relative;
   float: right;
