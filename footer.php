@@ -40,7 +40,7 @@
 
 
 <div class="footer-bar">
-    <h5 class="right-statement">© Store Name <?php echo date("Y") ?>. All rights reserved.</h5>
+    <h5 class="right-statement">© <?php echo bloginfo('name') . " "; echo date("Y"); ?>. All rights reserved.</h5>
   </div>
 
 </body>
