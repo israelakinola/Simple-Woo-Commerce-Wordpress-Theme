@@ -4,69 +4,37 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package one-toronto
+ * @package test_underscore
  */
 
 get_header();
 ?>
 
+	<main id="primary" class="site-main">
 
-<?php
-			while ( have_posts() ) {
-				the_post();
+		<?php
+		while ( have_posts() ) :
+			the_post();
+
+			get_template_part( 'template-parts/content', get_post_type() );
+
+			the_post_navigation(
+				array(
+					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'test_underscore' ) . '</span> <span class="nav-title">%title</span>',
+					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'test_underscore' ) . '</span> <span class="nav-title">%title</span>',
+				)
+			);
+
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
+
+		endwhile; // End of the loop.
 		?>
 
-
-<section class="post">
-	<div class="container-fluid">
-		<div class="page-content">
-    <div class="holder breadcrumbs-wrap mt-0 py-4">
-      <div class="container">
-        <ul class="breadcrumbs">
-          <li><a href="/Lifestyle">Home</a></li>
-          <li><span><?php the_title();?></span></li>
-        </ul>
-      </div>
-    </div>
-    <div class="holder">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 mx-auto p-0" style="flex:0 0 100%; width:100%; max-width:800px;">
-            <div class="post-full">
-              <h2 class="post-title"><?php the_title() ?></h2>
-              <div class="post-links">
-                <div class="post-date"><i class="icon-calendar"></i><?php the_date() ?></div>
-                <a href="#" class="post-link">by <?php the_author() ?></a>
-              </div>
-              
-              <div class="post-text">
-				<?php the_content( );?>
-              </div>
-              
-            </div>
-
-
-
-
-           
-          </div>
-          
-        </div>
-      </div>
-    </div>
-  </div>
-	</div>
-</section>
-
-		
-<?php
-
-}
-?>
-
-
-
+	</main><!-- #main -->
 
 <?php
-
+get_sidebar();
 get_footer();

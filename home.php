@@ -10,12 +10,6 @@
 get_header();
 ?>
 
-<div class="one-toronto-section-div" style="background-image:url('<?php echo get_theme_file_uri('images/bg.png');  ?>'); background-size:cover; margin-bottom:36px;">
-		<div class="container">
-			<h1 class="text-white">Lifestyle</h1>
-		</div>
-	</div>
-
 
 <section class="lifestyle">
 

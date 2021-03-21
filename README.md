@@ -1,6 +1,6 @@
 # Simple Woo-Commerce Wordpress Theme
 ### REQUIREMENT
-Woo Commcerce Plugin - This store theme requires the Woocommerce Plugin to Work.
+Woo Commcerce Plugin - This store theme requires the Woocommerce Plugin to work.
 
 ### INSTALATION
 ...
