@@ -1,6 +1,6 @@
 
 <div class="product">
-      <a href="<?php echo get_permalink( ); ?>" class="product-background-image w-inline-block" style=" background-image:url('<?php echo get_the_post_thumbnail_url(get_the_ID());  ?>'); background-size:cover;  background-position:center; "></a>
+      <a href="<?php echo get_permalink( ); ?>" class="product-background-image w-inline-block" style=" background-image:url('<?php echo get_the_post_thumbnail_url(get_the_ID());  ?>');"></a>
       <h1 class="product-title">
         <a href="<?php echo get_permalink( ); ?>" class="link"><?php the_title();?></a>
       </h1>

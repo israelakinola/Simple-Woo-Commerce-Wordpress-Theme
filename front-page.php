@@ -10,9 +10,7 @@
 get_header();
 ?>
 
-<div class="one-toronto-section-div" style="background-image:url('<?php echo get_theme_file_uri('images/bg.png');  ?>'); background-size:cover; height:10px; margin-bottom:24px;">
-	
-	</div>
+<div class="home-nav-divider"></div>
     
 <section id="home">
 

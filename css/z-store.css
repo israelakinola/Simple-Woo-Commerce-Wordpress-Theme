@@ -3065,6 +3065,10 @@ figcaption {
 
 .logo-image {
   display: block;
+  min-height: 50px;
+  min-width: 50px;
+  max-width: 150px;
+  width: 100%;
 }
 
 .remove-button {
@@ -3913,8 +3917,9 @@ figcaption {
   height: 400px;
   min-width: 400px;
   background-image: url('https://d3e54v103j8qbb.cloudfront.net/img/background-image.svg');
-  background-position: 50% 50%;
+  background-position: center;
   background-size: cover;
+  background-repeat:no-repeat;
 }
 
 .product {
@@ -3967,7 +3972,7 @@ figcaption {
 }
 
 .home-nav-divider {
-  max-height: 40px;
+  height: 40px;
   margin-top: 20px;
   margin-bottom: 20px;
   background-color: #000;

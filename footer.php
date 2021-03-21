@@ -39,11 +39,9 @@
       </div>
 
 
-  <div class="holder ">
-		<div class="container-fluid" style="background-image:url('<?php echo get_theme_file_uri('images/bg.png');  ?>');">
-			<p class="p-4 m-0 text-white text-center">© One Toronto Entertainment. All rights reserved.</p>
-		</div>
-</footer>
+<div class="footer-bar">
+    <h5 class="right-statement">© Store Name <?php echo date("Y") ?>. All rights reserved.</h5>
+  </div>
 
 </body>
 </html>
