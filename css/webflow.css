@@ -1604,6 +1604,7 @@ textarea.w-select {
   float: left;
   text-decoration: none;
   color: #333333;
+  max-width: 150px;
 }
 .w-nav-link,.page_item {
   position: relative;

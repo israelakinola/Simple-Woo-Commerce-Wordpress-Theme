@@ -10,7 +10,6 @@
 get_header();
 ?>
 
-<div class="home-nav-divider"></div>
     
 <section id="home">
 

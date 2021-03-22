@@ -56,3 +56,5 @@
         </div>
       </div>
     </header>
+
+    <div class="home-nav-divider"></div>

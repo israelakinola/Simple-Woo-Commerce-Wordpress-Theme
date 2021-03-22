@@ -9,7 +9,6 @@
           <a href="contact.html" class="footer-link">Contact</a>
           <a href="#" class="footer-link">Products</a>
           <a href="blog.html" aria-current="page" class="footer-link w--current">Blog</a>
-          <a href="styleguide.html" class="footer-link">Styleguide</a>
         </div>
         <div id="w-node-_88a386dd-8f07-0c34-70f0-2d9f87e29724-87e29718" class="label">Categories</div>
         <div id="w-node-_88a386dd-8f07-0c34-70f0-2d9f87e29726-87e29718" class="links-section-footer">

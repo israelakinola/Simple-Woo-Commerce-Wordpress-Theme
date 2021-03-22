@@ -1,3 +1,12 @@
+
+a{
+  text-decoration: none!important;
+}
+
+li{
+  list-style-type: none!important;
+}
+
 .w-layout-grid {
   display: -ms-grid;
   display: grid;
@@ -3023,7 +3032,7 @@ figcaption {
   margin-bottom: 10px;
 }
 
-.navigation-item,.page_item {
+ .navigation-item,.page_item,.menu-item {
   padding-top: 9px;
   padding-bottom: 9px;
   opacity: 0.6;
@@ -3200,7 +3209,9 @@ figcaption {
 }
 
 .footer {
-  padding-top: 120px;
+  border-top: 10px solid #000;
+  margin-top: 60px;
+  padding-top: 60px;
   padding-bottom: 60px;
   justify-items: start;
   -webkit-box-align: start;
