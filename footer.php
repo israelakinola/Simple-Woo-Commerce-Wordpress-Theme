@@ -3,13 +3,11 @@
   <div class="w-layout-grid footer">
         <a href="index.html" id="w-node-_88a386dd-8f07-0c34-70f0-2d9f87e2971b-87e29718" class="logo-link w-inline-block"><img src="images/store-logo2x.png" width="65" alt="" class="logo-footer"></a>
         <div id="w-node-_88a386dd-8f07-0c34-70f0-2d9f87e2971d-87e29718" class="label">Menu</div>
+         <!-- Nav  Menu -->
         <div id="w-node-_88a386dd-8f07-0c34-70f0-2d9f87e2971f-87e29718" class="links-section-footer">
-          <a href="index.html" class="footer-link">Home</a>
-          <a href="about.html" class="footer-link">About</a>
-          <a href="contact.html" class="footer-link">Contact</a>
-          <a href="#" class="footer-link">Products</a>
-          <a href="blog.html" aria-current="page" class="footer-link w--current">Blog</a>
+          <?php wp_nav_menu( ['container' => false,'menu_class'=>'footer-link','theme_location'=>'Header Menu','menu'=> get_nav_menu_locations('Header Menu')['header_menu']] ) ?>
         </div>
+         <!-- Nav Menu Ends -->
         <div id="w-node-_88a386dd-8f07-0c34-70f0-2d9f87e29724-87e29718" class="label">Categories</div>
         <div id="w-node-_88a386dd-8f07-0c34-70f0-2d9f87e29726-87e29718" class="links-section-footer">
           <div class="w-dyn-list">
@@ -24,17 +22,17 @@
           </div>
         </div>
         <div id="w-node-_88a386dd-8f07-0c34-70f0-2d9f87e2972d-87e29718" class="label">Help</div>
+        <!-- Help Menu -->
         <div id="w-node-_88a386dd-8f07-0c34-70f0-2d9f87e2972f-87e29718" class="links-section-footer">
-          <a href="contact.html" class="footer-link">Shipping</a>
-          <a href="contact.html" class="footer-link">Returns &amp; Exchange</a>
-          <a href="contact.html" class="footer-link">Product Care</a>
+           <?php wp_nav_menu( ['container' => false,'menu_class'=>'footer-link','theme_location'=>'Help Menu','menu'=> get_nav_menu_locations('Help Menu')['Help_menu']] ) ?>
         </div>
+         <!-- Help Menu Ends -->
         <div id="w-node-_88a386dd-8f07-0c34-70f0-2d9f87e29736-87e29718" class="label">Follow</div>
+         <!-- Social Menu -->
         <div id="w-node-_88a386dd-8f07-0c34-70f0-2d9f87e29738-87e29718" class="links-section-footer">
-          <a href="https://www.instagram.com/webflowapp/" target="_blank" class="footer-link">Instagram</a>
-          <a href="https://www.facebook.com/webflow/" target="_blank" class="footer-link">Facebook</a>
-          <a href="https://twitter.com/webflow" target="_blank" class="footer-link">Twitter</a>
+            <?php wp_nav_menu( ['container' => false,'menu_class'=>'footer-link social-link','theme_location'=>'Social Menu','menu'=> get_nav_menu_locations('Social Menu')['social_menu']] ) ?>
         </div>
+         <!-- Social Menu -->
       </div>
 
 

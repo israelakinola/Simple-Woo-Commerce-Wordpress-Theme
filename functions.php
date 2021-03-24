@@ -191,11 +191,15 @@ add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
 if ( ! function_exists( 'mytheme_register_nav_menu' ) ) {
  
     function z_store_register_nav_menu(){
+
         register_nav_menus( array(
             'header_menu' => __( 'Header Menu', 'This Menu is assigned to the Top Navigation' ),
-            'footer_menu'  => __( 'Footer Menu', 'This Menu is 	assigned to the Footer Navigation' ),
+			'help_menu'  => __( 'Help Menu', 'This Menu is assigned to the Footer Help Navigation' ),
+			'social_menu'  => __( 'Social Menu', 'This Menu is assigned to the Footer Socail Navigation' ),
+
         ) );
     }
+
     add_action( 'after_setup_theme', 'z_store_register_nav_menu', 0 );
 }
 
