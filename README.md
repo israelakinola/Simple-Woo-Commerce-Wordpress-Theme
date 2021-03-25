@@ -16,4 +16,4 @@ Woo Commcerce Plugin - This store theme requires the Woocommerce Plugin to work.
 ### USAGE
 Start Posting Products
 
-<img width="1280" alt="The Shoppies Preview " src="https://github.com/israelakinola/Simple-Woo-Commerce-Wordpress-Theme/blob/c3c7b9295b9492a1462fb0f0c3e093ed23e298a6/screenshot.png">
+<img width="1280" alt="The Shoppies Preview " src="https://github.com/israelakinola/Simple-Woo-Commerce-Wordpress-Theme/blob/83026787d69bc89c0ec3a11c152faa12b7466c45/screenshot.png">
