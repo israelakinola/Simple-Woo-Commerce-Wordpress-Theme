@@ -3248,6 +3248,9 @@ figcaption {
   opacity: 1;
 }
 
+.footer-logo-link{
+  margin: 0 auto;
+}
 .made-with-webflow {
   display: -webkit-box;
   display: -webkit-flex;

@@ -1,7 +1,14 @@
 
+<?php 
+  //Get WP Appreance Logo
+  $custom_logo_id = get_theme_mod( 'custom_logo' );
+  $logo_src = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+
+  ?>
+
 <footer>
   <div class="w-layout-grid footer">
-        <a href="index.html" id="w-node-_88a386dd-8f07-0c34-70f0-2d9f87e2971b-87e29718" class="logo-link w-inline-block"><img src="images/store-logo2x.png" width="65" alt="" class="logo-footer"></a>
+        <a href="/" aria-current="page" class="logo-link w-inline-block w--current footer-logo-link"><img src="<?php echo  $logo_src[0]; ?>" width="65" alt="" class="logo-image"></a>
         <div id="w-node-_88a386dd-8f07-0c34-70f0-2d9f87e2971d-87e29718" class="label">Menu</div>
          <!-- Nav  Menu -->
         <div id="w-node-_88a386dd-8f07-0c34-70f0-2d9f87e2971f-87e29718" class="links-section-footer">
