@@ -24,7 +24,9 @@ li{
   position: relative;
 }
 
-
+.woocommerce .products ul::after, .woocommerce .products ul::before, .woocommerce ul.products::after, .woocommerce ul.products::before{
+  display: none;
+}
 
 .woocommerce-product-gallery{
     opacity: 100%!important;

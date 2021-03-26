@@ -25,44 +25,13 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
-<li <?php wc_product_class( '', $product ); ?>>
-	<?php
-	/**
-	 * Hook: woocommerce_before_shop_loop_item.
-	 *
-	 * @hooked woocommerce_template_loop_product_link_open - 10
-	 */
-	do_action( 'woocommerce_before_shop_loop_item' );
 
-	/**
-	 * Hook: woocommerce_before_shop_loop_item_title.
-	 *
-	 * @hooked woocommerce_show_product_loop_sale_flash - 10
-	 * @hooked woocommerce_template_loop_product_thumbnail - 10
-	 */
-	do_action( 'woocommerce_before_shop_loop_item_title' );
-
-	/**
-	 * Hook: woocommerce_shop_loop_item_title.
-	 *
-	 * @hooked woocommerce_template_loop_product_title - 10
-	 */
-	do_action( 'woocommerce_shop_loop_item_title' );
-
-	/**
-	 * Hook: woocommerce_after_shop_loop_item_title.
-	 *
-	 * @hooked woocommerce_template_loop_rating - 5
-	 * @hooked woocommerce_template_loop_price - 10
-	 */
-	do_action( 'woocommerce_after_shop_loop_item_title' );
-
-	/**
-	 * Hook: woocommerce_after_shop_loop_item.
-	 *
-	 * @hooked woocommerce_template_loop_product_link_close - 5
-	 * @hooked woocommerce_template_loop_add_to_cart - 10
-	 */
-	do_action( 'woocommerce_after_shop_loop_item' );
-	?>
-</li>
+<div class="product">
+      <a href="<?php echo get_permalink( ); ?>" class="product-background-image w-inline-block" style=" background-image:url('<?php echo get_the_post_thumbnail_url(get_the_ID());  ?>');"></a>
+      <h1 class="product-title">
+        <a href="<?php echo get_permalink( ); ?>" class="link"><?php the_title();?></a>
+      </h1>
+      <div class="rating"><img src="<?php echo get_theme_file_uri('images/star-icon.svg' ) ?>" loading="lazy" alt=""><img src="<?php echo get_theme_file_uri('images/star-icon.svg' ) ?>" loading="lazy" alt=""><img src="<?php echo get_theme_file_uri('images/star-icon.svg' ) ?>" loading="lazy" alt=""><img src="<?php echo get_theme_file_uri('images/star-icon.svg' ) ?>" loading="lazy" alt=""><img src="<?php echo get_theme_file_uri('images/star-icon.svg' ) ?>" loading="lazy" alt=""></div>
+      <h3 class="product-price"><?php echo $price;?> </h3>
+      <a href="<?php echo get_permalink( ); ?>" class="view-product-btn w-button">View Product</a>
+</div>

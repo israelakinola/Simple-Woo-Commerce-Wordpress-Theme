@@ -20,5 +20,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-	<ul class=" py-4 products columns-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?>">
+<ul class="products products-grid">
 

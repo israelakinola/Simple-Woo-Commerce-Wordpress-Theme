@@ -6,4 +6,5 @@ get_header();
 		<?php woocommerce_content(); ?>
 	</div>
 <?php
+
 get_footer();
