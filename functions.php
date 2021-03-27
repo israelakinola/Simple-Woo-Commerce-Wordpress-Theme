@@ -144,7 +144,6 @@ function z_store_scripts() {
 	
 	wp_enqueue_style( 'Bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css' );
 	wp_enqueue_style( 'Normalize Style', get_theme_file_uri('/css/normalize.css'));
-	wp_enqueue_style( 'Webflow Style', get_theme_file_uri('/css/webflow.css'));
 	wp_enqueue_style( 'Main Style', get_theme_file_uri('/css/z-store.css'));
 	
 	wp_enqueue_script('Bootstrap js', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', 'jquery-core-js', NULL, true);
