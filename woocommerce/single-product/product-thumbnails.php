@@ -33,7 +33,7 @@ if ( $attachment_ids && $product->get_image_id() ) {
 		// var_dump($attachment_id->guid);
 		// echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', wc_get_gallery_image_html( $attachment_id ), $attachment_id ); // phpcs:disable WordPress.XSS.EscapeOutput.OutputNotEscaped
 		echo '
-			<div data-thumb="'.one_toronto_img_dim( $attachment_id->guid,'100x100').'" data-thumb-alt="" class="woocommerce-product-gallery__image">
+			<div data-thumb="'.convert_image_to_appropraite_file_extension( $attachment_id->guid,'100x100').'" data-thumb-alt="" class="woocommerce-product-gallery__image">
 			<img onclick="show_image_thumb_as_main(event)" class="product-image-thumbs" src="'. $attachment_id->guid .'" class="" alt="" loading="lazy" title="unnamed">
 		</div>
 			';

@@ -203,7 +203,7 @@ if ( ! function_exists( 'mytheme_register_nav_menu' ) ) {
 }
 
 
-function one_toronto_img_dim($image_url,$size ){
+function convert_image_to_appropraite_file_extension($image_url,$size ){
 	$path = $image_url; 
 	$ext = pathinfo($path, PATHINFO_EXTENSION);
 	if($ext == 'png'){

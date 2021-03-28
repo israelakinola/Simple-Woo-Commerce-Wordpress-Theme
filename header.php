@@ -11,16 +11,6 @@
 
 
 ?>
-<!doctype html>
-<html <?php language_attributes(); ?>>
-<head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
-  <link rel="icon" href="<?php echo $image[0]; ?>" type="image/gif" sizes="16x16">
-	<?php wp_head(); ?>
-</head>
-
 <?php 
   //Get WP Appreance Logo
   $custom_logo_id = get_theme_mod( 'custom_logo' );
@@ -35,7 +25,19 @@
       }
       
     }
-      ?> 
+  ?>
+
+
+<!doctype html>
+<html <?php language_attributes(); ?>>
+<head>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+  <link rel="icon" href="<?php echo  $logo_src[0];  ?>" type="image/gif" sizes="16x16">
+	<?php wp_head(); ?>
+</head>
+
 <body <?php body_class(); ?>>
     <header>
         <div data-collapse="medium" data-animation="default" data-duration="400" role="banner" class="navigation w-nav">
@@ -43,7 +45,7 @@
             <?php wp_nav_menu( ['container' => 'nav','container_class'=> 'w-nav-menu-con', 'menu_class'=>'w-nav-menu-con','theme_location'=>'Header Menu','menu'=> get_nav_menu_locations('Header Menu')['header_menu']] ) ?>
             <div class="menu-button w-nav-button"><img src="images/menu-icon_1menu-icon.png" width="22" alt="" class="menu-icon"></div>
             <!-- Logo -->
-            <a href="/" aria-current="page" class="logo-link w-nav-brand w--current"><img src=<?php echo  $logo_src[0]; ?>" width="65" alt="" class="logo-image"></a>
+            <a href="/" aria-current="page" class="logo-link w-nav-brand w--current"><img src="<?php echo  $logo_src[0]; ?>" width="65" alt="" class="logo-image"></a>
             <!-- Cart and Search btn -->
             <div class="cart-search">
               <img src="images/search.svg" loading="lazy" width="30" alt="">
